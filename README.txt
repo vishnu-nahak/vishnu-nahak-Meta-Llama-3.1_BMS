@@ -89,66 +89,72 @@ ReDoc: http://127.0.0.1:8000/redoc
 Usage
 You can interact with the API using tools like Postman or curl. Below are some example endpoints you can use:
 
-Endpoints
-Create a Book:
-
-Method: POST
-Endpoint: /books/
-Body:
-{
-  "title": "Book Title",
-  "author": "Author Name",
-  "genre": "Genre",
-  "year_published": 2023,
-  "summary": "Book summary here."
-}
-
-
-Get All Books:
-
-Method: GET
-Endpoint: /books/
-Get a Specific Book:
-
-Method: GET
-Endpoint: /books/{book_id}
-Update a Book:
-
-Method: PUT
-Endpoint: /books/{book_id}
-Body (only include fields you want to update):
-{
-  "title": "Updated Title",
-  "summary": "Updated summary here."
-}
-
-Delete a Book:
-
-Method: DELETE
-Endpoint: /books/{book_id}
-Create a Review:
-
-Method: POST
-Endpoint: /books/{book_id}/reviews
-Body:
-{
-  "review_text": "This book was great!",
-  "rating": 5
-}
-
-
-Get Reviews for a Book:
-
-Method: GET
-Endpoint: /books/{book_id}/reviews
-Generate Summary:
-
-Method: POST
-Endpoint: /generate-summary/
-Body:
-{
-  "content": "Content to summarize."
-}
+Using Swagger UI to Test Your API
+	1. Access Swagger UI: Open your web browser and navigate to http://127.0.0.1:8000/docs. This will show you the interactive documentation for your FastAPI application.
+	2. Explore Endpoints: On the Swagger UI page, you will see a list of all the endpoints you defined in your main.py. Each endpoint will have a section where you can view details about the request parameters and response schemas.
+	3. Test Endpoints:
+		○ Creating a Book:
+			§ Find the POST /books/ endpoint.
+			§ Click on it to expand.
+			§ Click on the "Try it out" button.
+			§ Enter the details for a new book in the provided fields.
+			§ Click on the "Execute" button to make the request.
+			§ Check the response to see if the book was created successfully.
+		○ Reading Books:
+			§ Find the GET /books/ endpoint.
+			§ Click on it to expand.
+			§ Click on the "Try it out" button.
+			§ Click on the "Execute" button to fetch the list of books.
+			§ Check the response to see if the books are listed correctly.
+		○ Reading a Specific Book:
+			§ Find the GET /books/{book_id} endpoint.
+			§ Click on it to expand.
+			§ Enter a valid book ID in the {book_id} field.
+			§ Click on the "Try it out" button.
+			§ Click on the "Execute" button to fetch the details of the specific book.
+			§ Check the response to ensure the correct book details are returned.
+		○ Updating a Book:
+			§ Find the PUT /books/{book_id} endpoint.
+			§ Click on it to expand.
+			§ Enter a valid book ID and updated book details.
+			§ Click on the "Try it out" button.
+			§ Click on the "Execute" button to update the book.
+			§ Check the response to see if the book was updated successfully.
+		○ Deleting a Book:
+			§ Find the DELETE /books/{book_id} endpoint.
+			§ Click on it to expand.
+			§ Enter a valid book ID.
+			§ Click on the "Try it out" button.
+			§ Click on the "Execute" button to delete the book.
+			§ Check the response to ensure the book was deleted successfully.
+		○ Creating a Review:
+			§ Find the POST /books/{book_id}/reviews endpoint.
+			§ Click on it to expand.
+			§ Enter a valid book ID and review details.
+			§ Click on the "Try it out" button.
+			§ Click on the "Execute" button to create a review.
+			§ Check the response to ensure the review was created successfully.
+		○ Reading Reviews:
+			§ Find the GET /books/{book_id}/reviews endpoint.
+			§ Click on it to expand.
+			§ Enter a valid book ID.
+			§ Click on the "Try it out" button.
+			§ Click on the "Execute" button to fetch reviews for the book.
+			§ Check the response to see if the reviews are listed correctly.
+		○ Generating Summary:
+			§ Find the GET /books/{book_id}/summary endpoint.
+			§ Click on it to expand.
+			§ Enter a valid book ID.
+			§ Click on the "Try it out" button.
+			§ Click on the "Execute" button to generate a summary for the book.
+			§ Check the response to ensure the summary is generated correctly.
+		○ Manual Summary Generation:
+			§ Find the POST /generate-summary/ endpoint.
+			§ Click on it to expand.
+			§ Enter some content for which you want to generate a summary.
+			§ Click on the "Try it out" button.
+			§ Click on the "Execute" button to generate the summary.
+			§ Check the response to ensure the summary is generated correctly.
 
 
 Contributing
